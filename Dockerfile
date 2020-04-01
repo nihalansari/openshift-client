@@ -1,8 +1,8 @@
 FROM golang:1.11-alpine
 RUN mkdir /app
-COPY httpserve.go /app
+COPY main.go /app
 WORKDIR /app
-RUN go build -o httpserve .
+RUN go build -o main .
 EXPOSE 8080 8888
 USER 1001
-ENTRYPOINT ["/app/httpserve"]
+ENTRYPOINT ["/app/main"]
